@@ -5,9 +5,12 @@ import matplotlib.ticker as mticker
 from pathlib import Path
 import json
 
-DATA_PATH  = Path("../../data/raw/raw_cves.parquet")
-OUT_DIR    = Path("../../data/eda")
-SPLIT_DIR  = Path("../../data/processed")
+SCRIPT_DIR   = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+
+DATA_PATH = PROJECT_ROOT / "data" / "raw" / "raw_cves.parquet"
+OUT_DIR   = PROJECT_ROOT / "data" / "eda"
+SPLIT_DIR = PROJECT_ROOT / "data" / "processed"
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 SPLIT_DIR.mkdir(parents=True, exist_ok=True)
