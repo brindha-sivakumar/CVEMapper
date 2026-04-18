@@ -22,7 +22,6 @@ PROJECT_ROOT = SCRIPT_DIR.parent.parent
 RESULTS_DIR   = PROJECT_ROOT / "results" 
 SPLIT_DIR = PROJECT_ROOT / "data" / "processed"
 
-RESULTS_DIR = Path("../../results")
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 LABEL_ORDER = ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
