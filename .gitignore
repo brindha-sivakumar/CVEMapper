@@ -1,0 +1,67 @@
+# ── Large data files ──────────────────────────────────────────────────────────
+data/raw/
+data/processed/*.csv
+
+# ── Model checkpoints ─────────────────────────────────────────────────────────
+# Push weights to HuggingFace Hub via demo/push_to_hub.py instead
+checkpoints/
+
+# ── Generated plots ───────────────────────────────────────────────────────────
+# Reproducible by re-running analysis scripts — not worth tracking
+results/*.png
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.so
+.installed.cfg
+MANIFEST
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── HuggingFace cache ─────────────────────────────────────────────────────────
+.cache/

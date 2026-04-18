@@ -1,0 +1,29 @@
+{
+  "total": 246929,
+  "train": 80253,
+  "val": 14162,
+  "test": 152514,
+  "train_years": "\u2264 2021",
+  "test_years": "\u2265 2022",
+  "severity_distribution": {
+    "train": {
+      "HIGH": 34778,
+      "MEDIUM": 32121,
+      "CRITICAL": 11513,
+      "LOW": 1841
+    },
+    "val": {
+      "HIGH": 6071,
+      "MEDIUM": 5718,
+      "CRITICAL": 2071,
+      "LOW": 302
+    },
+    "test": {
+      "MEDIUM": 74627,
+      "HIGH": 54758,
+      "CRITICAL": 16524,
+      "LOW": 6573,
+      "NONE": 32
+    }
+  }
+}
