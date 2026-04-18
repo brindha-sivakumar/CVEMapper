@@ -16,7 +16,12 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
 
-SPLIT_DIR  = Path("../../data/processed")
+SCRIPT_DIR   = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+
+RESULTS_DIR   = PROJECT_ROOT / "results" 
+SPLIT_DIR = PROJECT_ROOT / "data" / "processed"
+
 RESULTS_DIR = Path("../../results")
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
