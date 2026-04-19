@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from dotenv import load_dotenv
-
+import inspect
 import torch
 from torch.nn import CrossEntropyLoss
 from transformers import (
@@ -59,6 +59,10 @@ if DEVICE == "cuda":
     print(f"  GPU   : {torch.cuda.get_device_name(0)}")
     print(f"  VRAM  : {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
 
+# detect correct eval key for this transformers version
+_ta_params = inspect.signature(TrainingArguments.__init__).parameters
+_EVAL_KEY   = "eval_strategy" if "eval_strategy" in _ta_params else "evaluation_strategy"
+print(f"TrainingArguments eval key : {_EVAL_KEY}")
 
 # ── load splits ───────────────────────────────────────────────────────────────
 
@@ -174,7 +178,7 @@ args = TrainingArguments(
     learning_rate               = LR,
     warmup_steps                = 500,
     weight_decay                = 0.01,
-    evaluation_strategy         = "epoch",
+    **{_EVAL_KEY: "epoch"},
     save_strategy               = "epoch",
     load_best_model_at_end      = True,
     metric_for_best_model       = "f1_weighted",
