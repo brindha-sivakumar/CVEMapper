@@ -87,9 +87,9 @@ print(f"  CVEs exceeding 256 tokens: {(df['token_len'] > 256).sum():,} ({(df['to
 
 
 print("\nCVEs per year")
-
+year_df = df[df["published"].dt.year >= 2015]
 year_sev = (
-    df.groupby(["year", "severity"])
+    year_df.groupby(["year", "severity"])
     .size()
     .unstack(fill_value=0)
     .reindex(columns=["CRITICAL","HIGH","MEDIUM","LOW"])
